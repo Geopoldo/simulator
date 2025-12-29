@@ -8,6 +8,11 @@ Verification script for Phase 1 implementation:
 
 import json
 import sys
+import os
+
+# Determine project root (tests/ is one level down)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'backend'))
 
 def verify_phase1():
     print("=" * 80)
@@ -15,14 +20,14 @@ def verify_phase1():
     print("=" * 80)
     
     # Load simulated data
-    with open("backend/simulated_data_massive.json", "r") as f:
+    with open(os.path.join(PROJECT_ROOT, "backend/simulated_data_massive.json"), "r") as f:
         data = json.load(f)
     
     print(f"\n✓ Loaded {len(data)} simulated records")
     
     # Load context to check what disasters are available
-    from backend.context_loader import ContextLoader
-    loader = ContextLoader("context/public_emdat_custom_request_2025-12-04.xlsx")
+    from context_loader import ContextLoader
+    loader = ContextLoader(os.path.join(PROJECT_ROOT, "context/public_emdat_custom_request_2025-12-04.xlsx"))
     events = loader.get_events_by_country("Colombia")
     
     print(f"✓ Loaded {len(events)} disaster events for Colombia")

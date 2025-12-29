@@ -116,14 +116,15 @@ desktop.ini
 # ============================================
 # Project-specific - Large/Generated Files
 # ============================================
+# Output folder (logs, reports, generated data)
+output/
+
 # Logs
 *.log
-geocoding_log.txt
 logs/
 
 # Generated JSON data
 simulated_data*.json
-simulation_coverage_report.json
 backend/simulated_data*.json
 backend/latest_structure.json
 

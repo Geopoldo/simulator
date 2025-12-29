@@ -12,19 +12,18 @@ trap cleanup SIGINT
 
 echo "Iniciando TULIAN..."
 
+# Activar el entorno virtual de la raíz
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+elif [ -d "venv" ]; then
+    source venv/bin/activate
+else
+    echo "ADVERTENCIA: No se encontró entorno virtual. Intentando con python del sistema."
+fi
+
 # 1. Iniciar Backend
 echo "Levantando Backend..."
 cd backend
-
-# Activar el entorno virtual del backend
-if [ -d "venv" ]; then
-    source venv/bin/activate
-elif [ -d ".venv" ]; then
-    source .venv/bin/activate
-else
-    echo "ADVERTENCIA: No se encontró entorno virtual en backend. Intentando con python del sistema."
-fi
-
 python main.py &
 BACKEND_PID=$!
 cd ..

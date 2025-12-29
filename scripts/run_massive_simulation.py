@@ -3,8 +3,10 @@ import json
 import sys
 import os
 
-# Add backend to path
-sys.path.append(os.path.join(os.getcwd(), 'backend'))
+# Determine project root (scripts/ is one level down)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'backend'))
+os.chdir(PROJECT_ROOT)  # Change to project root for relative paths
 
 from simulator import Simulator
 from context_loader import ContextLoader
