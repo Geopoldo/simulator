@@ -5,14 +5,16 @@ Aplicación para generar datos sintéticos realistas de encuestas de seguridad a
 ## 🚀 Inicio Rápido
 
 ```bash
-# Backend (Puerto 9005)
-cd backend && source venv/bin/activate && python main.py
+# Opción 1: Script unificado (recomendado)
+./start.sh
 
-# Frontend (Puerto 5505)
-cd frontend && npm run dev
+# Opción 2: Manual
+source .venv/bin/activate      # Activar venv desde la raíz
+cd backend && python main.py   # Backend (Puerto 9005)
+cd frontend && npm run dev     # Frontend (Puerto 5505)
 ```
 
-**URLs**: [Frontend](http://localhost:5505) | [API](http://localhost:9005)
+**URLs**: [Frontend](http://localhost:5505) | [API](http://localhost:9005) | [API Docs](http://localhost:9005/docs)
 
 ---
 
@@ -43,37 +45,54 @@ cd frontend && npm run dev
 
 ---
 
-## 📁 Estructura
+## 📁 Estructura del Proyecto
 
 ```
 TULIAN/
-├── backend/
-│   ├── main.py          # API FastAPI
-│   ├── simulator.py     # Motor de simulación
-│   ├── odk_parser.py    # Parser XLSForm
-│   ├── rules.py         # Evaluador relevant/constraint
-│   ├── profiles.py      # Perfiles por país
-│   └── config/          # Parámetros YAML
-├── frontend/src/
-│   ├── App.jsx          # Aplicación principal
-│   └── components/      # Componentes React
-├── context/             # Datos EM-DAT
-├── ODK/                 # Archivos XLSForm
-└── MD/                  # Documentación
+├── backend/              # API FastAPI
+│   ├── main.py           # Servidor principal
+│   ├── simulator.py      # Motor de simulación
+│   ├── odk_parser.py     # Parser XLSForm
+│   ├── context_loader.py # Cargador de datos EM-DAT
+│   ├── config/           # Parámetros YAML
+│   └── simulation/       # Módulos de impacto
+├── frontend/             # Interfaz React + Vite
+│   └── src/components/   # Componentes UI
+├── scripts/              # Scripts de utilidad
+│   ├── analyze/          # Scripts de análisis
+│   └── run_massive_simulation.py
+├── tests/                # Scripts de verificación
+├── context/              # Datos EM-DAT
+├── ODK/                  # Archivos XLSForm
+├── MD/                   # Documentación
+├── output/               # Archivos generados (ignorados en git)
+└── start.sh              # Script de inicio unificado
 ```
 
 ---
 
 ## 📖 Documentación
 
-- [Manual de Usuario](MD/manual_de_usuario.md)
-- [Acerca de TULIAN](MD/acerca_de_tulian.md)
-- [Checklist de Requisitos](MD/checklist_requisitos.md)
-- [Simulación y Contexto](MD/simulacion_y_contexto.md)
+| Documento | Descripción |
+|-----------|-------------|
+| [Manual de Usuario](MD/manual_de_usuario.md) | Guía de uso básico |
+| [Acerca de TULIAN](MD/acerca_de_tulian.md) | Descripción del proyecto |
+| [Contextualización](MD/contextualizacion_de_datos.md) | Cómo funciona el contexto EM-DAT |
+| [Métodos de Ejecución](MD/metodos_de_ejecucion.md) | Instrucciones detalladas |
+| [Cálculos y Fórmulas](MD/calculos_y_formulas.md) | Lógica de indicadores |
+| [Simulación y Contexto](MD/simulacion_y_contexto.md) | Integración de datos |
 
 ---
 
 ## 🛠️ Tecnología
 
-**Backend**: Python 3.12, FastAPI, Pandas, Faker
-**Frontend**: React 18, Vite, TailwindCSS, Recharts, Leaflet
+**Backend**: Python 3.12, FastAPI, Pandas, Faker  
+**Frontend**: React 18, Vite, TailwindCSS, Recharts, Leaflet  
+**Datos**: EM-DAT (Emergency Events Database)
+
+---
+
+## 🔗 Repositorio
+
+**GitHub**: [Geopoldo/simulator](https://github.com/Geopoldo/simulator)
+

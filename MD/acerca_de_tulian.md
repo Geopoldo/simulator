@@ -96,10 +96,34 @@ Los datos de simulación se ajustan según eventos reales:
 - Daño económico
 - Respuesta humanitaria (OFDA, apelaciones)
 
+> 📖 Ver documentación completa: [Contextualización de Datos](contextualizacion_de_datos.md)
+
+---
+
+## Estructura del Proyecto
+
+```
+TULIAN/
+├── backend/         # API FastAPI + Motor de simulación
+├── frontend/        # Interfaz React + Vite
+├── scripts/         # Scripts de utilidad y análisis
+├── tests/           # Scripts de verificación
+├── context/         # Datos EM-DAT
+├── ODK/             # Archivos XLSForm
+├── MD/              # Documentación
+└── output/          # Archivos generados (ignorado en git)
+```
+
 ---
 
 ## Tecnología
 
-- **Backend**: Python, FastAPI, Pandas
-- **Frontend**: React, Recharts, Leaflet
+- **Backend**: Python 3.12, FastAPI, Pandas
+- **Frontend**: React 18, Vite, TailwindCSS, Recharts, Leaflet
 - **Datos**: EM-DAT, XLSForm
+
+---
+
+## Repositorio
+
+**GitHub**: [Geopoldo/simulator](https://github.com/Geopoldo/simulator)
