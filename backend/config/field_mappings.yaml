@@ -1,0 +1,70 @@
+# Field Mappings for ODK Survey Simulation
+# Defines which fields belong to which indicator groups
+
+# Food Consumption Score component fields
+fcs_fields:
+  - FCSStap    # Staples (cereals, tubers)
+  - FCSPulse   # Pulses (beans, lentils)
+  - FCSDairy   # Dairy products
+  - FCSPr      # Protein (meat, fish, eggs)
+  - FCSVeg     # Vegetables
+  - FCSFruit   # Fruits
+  - FCSFat     # Fats/oils
+  - FCSSugar   # Sugar/sweets
+  - FCSCond    # Condiments
+
+# Reduced Coping Strategy Index fields
+rcsi_fields:
+  - rCSILessQlty   # Rely on less preferred/expensive foods
+  - rCSIBorrow     # Borrow food or money for food
+  - rCSIMealSize   # Reduce portion sizes
+  - rCSIMealAdult  # Adults reduce intake for children
+  - rCSIMealNb     # Reduce number of meals per day
+
+# Household Hunger Scale fields
+hhs_fields:
+  - HHhSNoFood      # No food in house
+  - HHhSNoFood_FR   # Frequency: No food
+  - HHhSBedHung     # Go to bed hungry
+  - HHhSBedHung_FR  # Frequency: Bed hungry
+  - HHhSNotEat      # Entire day without eating
+  - HHhSNotEat_FR   # Frequency: Not eat
+
+# Expense/Economic fields (keywords for detection)
+expense_keywords:
+  - exp
+  - cost
+  - spend
+  - purch
+  - expenditure
+  - price
+  - payment
+
+# Food security categories
+food_security_categories:
+  acceptable:
+    fcs_threshold: 35
+    label: "Acceptable"
+    color: "green"
+  borderline:
+    fcs_min: 21
+    fcs_max: 35
+    label: "Borderline"
+    color: "yellow"
+  poor:
+    fcs_threshold: 21
+    label: "Poor"
+    color: "red"
+
+# Household Hunger Scale categories
+hhs_categories:
+  little_to_none:
+    score_max: 1
+    label: "Little to no hunger"
+  moderate:
+    score_min: 2
+    score_max: 3
+    label: "Moderate hunger"
+  severe:
+    score_min: 4
+    label: "Severe hunger"

@@ -1,0 +1,936 @@
+# Country Profiles Configuration
+# This file contains region defaults and country-specific metadata for TULIAN simulation
+# Extracted from profiles.py for better maintainability
+
+# =============================================================================
+# REGION DEFAULTS
+# =============================================================================
+# Each region defines default values for countries in that region.
+# Country-specific values override these defaults.
+
+region_defaults:
+  south_asia:
+    household_size_range: [4, 9]
+    expense:
+      base_mean: 5200.0
+      base_std: 2100.0
+      min_value: 600.0
+      decay_range: [0.05, 0.12]
+      scale: 1.0
+    fcs_base_range: [1.6, 3.7]
+    fcs_improve_range: [0.25, 0.55]
+    yesno_adjust: -0.04
+    altitude_base: 60.0
+    altitude_variation: 450.0
+    accuracy_range: [4.0, 10.0]
+    geo_bounds:
+      lat: [5.0, 35.0]
+      lon: [60.0, 95.0]
+
+  southeast_asia:
+    household_size_range: [3, 7]
+    expense:
+      base_mean: 6000.0
+      base_std: 2400.0
+      min_value: 500.0
+      decay_range: [0.04, 0.10]
+      scale: 1.2
+    fcs_base_range: [1.7, 3.8]
+    fcs_improve_range: [0.22, 0.5]
+    yesno_adjust: -0.02
+    altitude_base: 40.0
+    altitude_variation: 220.0
+    accuracy_range: [4.0, 9.0]
+    geo_bounds:
+      lat: [-10.0, 25.0]
+      lon: [90.0, 140.0]
+
+  east_asia:
+    household_size_range: [3, 6]
+    expense:
+      base_mean: 7800.0
+      base_std: 2900.0
+      min_value: 800.0
+      decay_range: [0.03, 0.08]
+      scale: 1.5
+    fcs_base_range: [2.0, 4.2]
+    fcs_improve_range: [0.18, 0.35]
+    yesno_adjust: -0.01
+    altitude_base: 120.0
+    altitude_variation: 600.0
+    accuracy_range: [3.5, 9.0]
+    geo_bounds:
+      lat: [20.0, 50.0]
+      lon: [100.0, 135.0]
+
+  central_asia:
+    household_size_range: [4, 8]
+    expense:
+      base_mean: 5000.0
+      base_std: 2000.0
+      min_value: 500.0
+      decay_range: [0.05, 0.10]
+      scale: 1.1
+    fcs_base_range: [1.7, 3.6]
+    fcs_improve_range: [0.22, 0.48]
+    yesno_adjust: -0.03
+    altitude_base: 300.0
+    altitude_variation: 800.0
+    accuracy_range: [4.0, 10.0]
+    geo_bounds:
+      lat: [35.0, 45.0]
+      lon: [60.0, 80.0]
+
+  caucasus:
+    household_size_range: [3, 6]
+    expense:
+      base_mean: 5400.0
+      base_std: 2000.0
+      min_value: 550.0
+      decay_range: [0.04, 0.09]
+      scale: 1.2
+    fcs_base_range: [1.9, 3.9]
+    fcs_improve_range: [0.2, 0.45]
+    yesno_adjust: -0.02
+    altitude_base: 400.0
+    altitude_variation: 700.0
+    accuracy_range: [3.5, 9.0]
+    geo_bounds:
+      lat: [37.0, 44.0]
+      lon: [40.0, 50.0]
+
+  middle_east:
+    household_size_range: [4, 8]
+    expense:
+      base_mean: 7000.0
+      base_std: 2800.0
+      min_value: 650.0
+      decay_range: [0.04, 0.09]
+      scale: 1.3
+    fcs_base_range: [1.8, 3.8]
+    fcs_improve_range: [0.22, 0.42]
+    yesno_adjust: 0.02
+    altitude_base: 110.0
+    altitude_variation: 380.0
+    accuracy_range: [3.0, 8.0]
+    geo_bounds:
+      lat: [12.0, 37.0]
+      lon: [34.0, 57.0]
+
+  north_africa:
+    household_size_range: [3, 7]
+    expense:
+      base_mean: 5600.0
+      base_std: 2300.0
+      min_value: 450.0
+      decay_range: [0.05, 0.11]
+      scale: 1.0
+    fcs_base_range: [1.7, 3.7]
+    fcs_improve_range: [0.22, 0.46]
+    yesno_adjust: -0.01
+    altitude_base: 150.0
+    altitude_variation: 500.0
+    accuracy_range: [3.0, 8.0]
+    geo_bounds:
+      lat: [20.0, 37.0]
+      lon: [-10.0, 35.0]
+
+  west_africa:
+    household_size_range: [4, 9]
+    expense:
+      base_mean: 4200.0
+      base_std: 1900.0
+      min_value: 320.0
+      decay_range: [0.06, 0.12]
+      scale: 0.9
+    fcs_base_range: [1.5, 3.2]
+    fcs_improve_range: [0.25, 0.55]
+    yesno_adjust: 0.04
+    altitude_base: 120.0
+    altitude_variation: 260.0
+    accuracy_range: [4.0, 12.0]
+    geo_bounds:
+      lat: [5.0, 18.0]
+      lon: [-18.0, 5.0]
+
+  central_africa:
+    household_size_range: [4, 9]
+    expense:
+      base_mean: 3800.0
+      base_std: 1800.0
+      min_value: 280.0
+      decay_range: [0.07, 0.13]
+      scale: 0.85
+    fcs_base_range: [1.4, 3.1]
+    fcs_improve_range: [0.25, 0.6]
+    yesno_adjust: 0.05
+    altitude_base: 180.0
+    altitude_variation: 420.0
+    accuracy_range: [4.0, 12.0]
+    geo_bounds:
+      lat: [-7.0, 5.0]
+      lon: [11.0, 31.0]
+
+  east_africa:
+    household_size_range: [4, 8]
+    expense:
+      base_mean: 4000.0
+      base_std: 1700.0
+      min_value: 270.0
+      decay_range: [0.06, 0.12]
+      scale: 0.88
+    fcs_base_range: [1.5, 3.3]
+    fcs_improve_range: [0.25, 0.55]
+    yesno_adjust: 0.03
+    altitude_base: 260.0
+    altitude_variation: 620.0
+    accuracy_range: [4.0, 11.0]
+    geo_bounds:
+      lat: [-2.0, 12.0]
+      lon: [30.0, 48.0]
+
+  southern_africa:
+    household_size_range: [3, 7]
+    expense:
+      base_mean: 5200.0
+      base_std: 2100.0
+      min_value: 420.0
+      decay_range: [0.05, 0.11]
+      scale: 1.0
+    fcs_base_range: [1.6, 3.6]
+    fcs_improve_range: [0.22, 0.5]
+    yesno_adjust: 0.02
+    altitude_base: 380.0
+    altitude_variation: 720.0
+    accuracy_range: [3.5, 9.0]
+    geo_bounds:
+      lat: [-35.0, -10.0]
+      lon: [15.0, 40.0]
+
+  latin_america_andes:
+    household_size_range: [3, 7]
+    expense:
+      base_mean: 6200.0
+      base_std: 2500.0
+      min_value: 500.0
+      decay_range: [0.04, 0.10]
+      scale: 1.2
+    fcs_base_range: [1.8, 3.8]
+    fcs_improve_range: [0.2, 0.45]
+    yesno_adjust: -0.01
+    altitude_base: 320.0
+    altitude_variation: 680.0
+    accuracy_range: [3.5, 8.5]
+    geo_bounds:
+      lat: [-23.0, 5.0]
+      lon: [-82.0, -55.0]
+
+  latin_america_central:
+    household_size_range: [3, 7]
+    expense:
+      base_mean: 5800.0
+      base_std: 2300.0
+      min_value: 450.0
+      decay_range: [0.05, 0.11]
+      scale: 1.1
+    fcs_base_range: [1.7, 3.7]
+    fcs_improve_range: [0.22, 0.48]
+    yesno_adjust: 0.0
+    altitude_base: 220.0
+    altitude_variation: 520.0
+    accuracy_range: [3.5, 8.5]
+    geo_bounds:
+      lat: [8.0, 18.0]
+      lon: [-92.0, -75.0]
+
+  caribbean:
+    household_size_range: [3, 6]
+    expense:
+      base_mean: 6000.0
+      base_std: 2400.0
+      min_value: 480.0
+      decay_range: [0.04, 0.10]
+      scale: 1.2
+    fcs_base_range: [1.9, 3.9]
+    fcs_improve_range: [0.2, 0.45]
+    yesno_adjust: -0.02
+    altitude_base: 45.0
+    altitude_variation: 120.0
+    accuracy_range: [3.0, 8.0]
+    geo_bounds:
+      lat: [10.0, 25.0]
+      lon: [-85.0, -60.0]
+
+  eastern_europe:
+    household_size_range: [2, 6]
+    expense:
+      base_mean: 6500.0
+      base_std: 2500.0
+      min_value: 600.0
+      decay_range: [0.04, 0.09]
+      scale: 1.3
+    fcs_base_range: [2.0, 4.0]
+    fcs_improve_range: [0.18, 0.36]
+    yesno_adjust: -0.03
+    altitude_base: 200.0
+    altitude_variation: 360.0
+    accuracy_range: [3.0, 7.5]
+    geo_bounds:
+      lat: [45.0, 52.0]
+      lon: [25.0, 40.0]
+
+  pacific:
+    household_size_range: [3, 6]
+    expense:
+      base_mean: 5600.0
+      base_std: 2300.0
+      min_value: 420.0
+      decay_range: [0.05, 0.10]
+      scale: 1.1
+    fcs_base_range: [1.8, 3.8]
+    fcs_improve_range: [0.22, 0.46]
+    yesno_adjust: 0.01
+    altitude_base: 35.0
+    altitude_variation: 140.0
+    accuracy_range: [3.0, 7.5]
+    geo_bounds:
+      lat: [-25.0, 15.0]
+      lon: [135.0, 180.0]
+
+# =============================================================================
+# COUNTRIES
+# =============================================================================
+# Country-specific metadata. Values here override region defaults.
+
+countries:
+  # ----- ASIA -----
+  Afghanistan:
+    iso2: AF
+    locales: [fa_IR, en_GB]
+    timezone: Asia/Kabul
+    currency: AFN
+    region: central_asia
+
+  Bangladesh:
+    iso2: BD
+    locales: [bn_BD, en_IN]
+    timezone: Asia/Dhaka
+    currency: BDT
+    region: south_asia
+    settlement_templates: [Rohingya Camp 4, Riverine Hamlet, Dhaka Peri-Urban]
+
+  Bhutan:
+    iso2: BT
+    locales: [en_IN, hi_IN]
+    timezone: Asia/Thimphu
+    currency: BTN
+    region: south_asia
+    altitude_base: 1200.0
+    altitude_variation: 600.0
+
+  Cambodia:
+    iso2: KH
+    locales: [en_PH, vi_VN, th_TH]
+    timezone: Asia/Phnom_Penh
+    currency: KHR
+    region: southeast_asia
+
+  China:
+    iso2: CN
+    locales: [zh_CN]
+    timezone: Asia/Shanghai
+    currency: CNY
+    region: east_asia
+    household_size_range: [3, 5]
+    yesno_adjust: -0.06
+
+  "Democratic People's Republic of Korea":
+    iso2: KP
+    locales: [ko_KR]
+    timezone: Asia/Pyongyang
+    currency: KPW
+    region: east_asia
+
+  India:
+    iso2: IN
+    locales: [hi_IN, en_IN]
+    timezone: Asia/Kolkata
+    currency: INR
+    region: south_asia
+    household_size_range: [4, 8]
+
+  Indonesia:
+    iso2: ID
+    locales: [id_ID]
+    timezone: Asia/Jakarta
+    currency: IDR
+    region: southeast_asia
+
+  Kyrgyz Republic:
+    iso2: KG
+    locales: [ru_RU, en_GB]
+    timezone: Asia/Bishkek
+    currency: KGS
+    region: central_asia
+    short_name: Kyrgyzstan
+
+  "Lao People's Democratic Republic":
+    iso2: LA
+    locales: [th_TH, vi_VN]
+    timezone: Asia/Vientiane
+    currency: LAK
+    region: southeast_asia
+    short_name: Laos
+
+  Myanmar:
+    iso2: MM
+    locales: [en_IN, th_TH]
+    timezone: Asia/Yangon
+    currency: MMK
+    region: southeast_asia
+
+  Nepal:
+    iso2: NP
+    locales: [ne_NP, en_IN]
+    timezone: Asia/Kathmandu
+    currency: NPR
+    region: south_asia
+    altitude_base: 900.0
+    altitude_variation: 1200.0
+
+  "Pacific (PICT)":
+    iso2: null
+    locales: [en_AU, en_NZ, en_PH]
+    timezone: Pacific/Port_Moresby
+    currency: PGK
+    region: pacific
+    short_name: Pacific
+    preset_geopoints:
+      - [-9.4438, 147.1803]
+      - [-17.7134, 178.0650]
+      - [-13.4432, -172.6417]
+      - [-21.1394, -175.2049]
+      - [-17.7333, 168.3273]
+      - [-6.2110, 155.5660]
+      - [-18.1416, 178.4419]
+      - [-14.2756, -170.7020]
+
+  Pakistan:
+    iso2: PK
+    locales: [en_IN, ar_SA]
+    timezone: Asia/Karachi
+    currency: PKR
+    region: south_asia
+
+  Philippines:
+    iso2: PH
+    locales: [en_PH]
+    timezone: Asia/Manila
+    currency: PHP
+    region: southeast_asia
+
+  Sri Lanka:
+    iso2: LK
+    locales: [en_IN, ta_IN]
+    timezone: Asia/Colombo
+    currency: LKR
+    region: south_asia
+
+  Tajikistan:
+    iso2: TJ
+    locales: [ru_RU]
+    timezone: Asia/Dushanbe
+    currency: TJS
+    region: central_asia
+
+  Timor-Leste:
+    iso2: TL
+    locales: [pt_BR, en_AU]
+    timezone: Asia/Dili
+    currency: USD
+    region: southeast_asia
+
+  # ----- MIDDLE EAST & NORTH AFRICA -----
+  Algeria:
+    iso2: DZ
+    locales: [fr_FR, ar_EG]
+    timezone: Africa/Algiers
+    currency: DZD
+    region: north_africa
+
+  Armenia:
+    iso2: AM
+    locales: [ru_RU, en_GB]
+    timezone: Asia/Yerevan
+    currency: AMD
+    region: caucasus
+
+  Egypt:
+    iso2: EG
+    locales: [ar_EG]
+    timezone: Africa/Cairo
+    currency: EGP
+    region: north_africa
+
+  Iraq:
+    iso2: IQ
+    locales: [ar_JO, ar_EG]
+    timezone: Asia/Baghdad
+    currency: IQD
+    region: middle_east
+
+  Jordan:
+    iso2: JO
+    locales: [ar_JO]
+    timezone: Asia/Amman
+    currency: JOD
+    region: middle_east
+
+  Lebanon:
+    iso2: LB
+    locales: [ar_PS, fr_FR]
+    timezone: Asia/Beirut
+    currency: LBP
+    region: middle_east
+
+  Libya:
+    iso2: LY
+    locales: [ar_SA]
+    timezone: Africa/Tripoli
+    currency: LYD
+    region: north_africa
+
+  Republic of Türkiye:
+    iso2: TR
+    locales: [tr_TR]
+    timezone: Europe/Istanbul
+    currency: TRY
+    region: middle_east
+    short_name: Türkiye
+
+  State of Palestine:
+    iso2: PS
+    locales: [ar_PS]
+    timezone: Asia/Hebron
+    currency: ILS
+    region: middle_east
+    short_name: Palestine
+
+  Syrian Arab Republic:
+    iso2: SY
+    locales: [ar_SA, ar_JO]
+    timezone: Asia/Damascus
+    currency: SYP
+    region: middle_east
+    short_name: Syria
+
+  Tunisia:
+    iso2: TN
+    locales: [fr_FR, ar_EG]
+    timezone: Africa/Tunis
+    currency: TND
+    region: north_africa
+
+  Ukraine:
+    iso2: UA
+    locales: [uk_UA, ru_RU]
+    timezone: Europe/Kyiv
+    currency: UAH
+    region: eastern_europe
+
+  Yemen:
+    iso2: YE
+    locales: [ar_SA]
+    timezone: Asia/Aden
+    currency: YER
+    region: middle_east
+
+  # ----- WEST AFRICA -----
+  Benin:
+    iso2: BJ
+    locales: [fr_FR]
+    timezone: Africa/Porto-Novo
+    currency: XOF
+    region: west_africa
+
+  Burkina Faso:
+    iso2: BF
+    locales: [fr_FR]
+    timezone: Africa/Ouagadougou
+    currency: XOF
+    region: west_africa
+
+  "Côte d'Ivoire":
+    iso2: CI
+    locales: [fr_FR]
+    timezone: Africa/Abidjan
+    currency: XOF
+    region: west_africa
+    short_name: "Cote d'Ivoire"
+
+  Gambia:
+    iso2: GM
+    locales: [en_GB]
+    timezone: Africa/Banjul
+    currency: GMD
+    region: west_africa
+
+  Ghana:
+    iso2: GH
+    locales: [en_GB]
+    timezone: Africa/Accra
+    currency: GHS
+    region: west_africa
+
+  Guinea:
+    iso2: GN
+    locales: [fr_FR]
+    timezone: Africa/Conakry
+    currency: GNF
+    region: west_africa
+
+  Guinea-Bissau:
+    iso2: GW
+    locales: [pt_PT, fr_FR]
+    timezone: Africa/Bissau
+    currency: XOF
+    region: west_africa
+
+  Liberia:
+    iso2: LR
+    locales: [en_GB]
+    timezone: Africa/Monrovia
+    currency: LRD
+    region: west_africa
+
+  Mali:
+    iso2: ML
+    locales: [fr_FR]
+    timezone: Africa/Bamako
+    currency: XOF
+    region: west_africa
+
+  Mauritania:
+    iso2: MR
+    locales: [fr_FR, ar_EG]
+    timezone: Africa/Nouakchott
+    currency: MRU
+    region: west_africa
+
+  Niger:
+    iso2: NE
+    locales: [fr_FR]
+    timezone: Africa/Niamey
+    currency: XOF
+    region: west_africa
+
+  Nigeria:
+    iso2: NG
+    locales: [en_GB]
+    timezone: Africa/Lagos
+    currency: NGN
+    region: west_africa
+
+  Senegal:
+    iso2: SN
+    locales: [fr_FR]
+    timezone: Africa/Dakar
+    currency: XOF
+    region: west_africa
+
+  Sierra Leone:
+    iso2: SL
+    locales: [en_GB]
+    timezone: Africa/Freetown
+    currency: SLE
+    region: west_africa
+
+  Togo:
+    iso2: TG
+    locales: [fr_FR]
+    timezone: Africa/Lome
+    currency: XOF
+    region: west_africa
+
+  # ----- CENTRAL AFRICA -----
+  Angola:
+    iso2: AO
+    locales: [pt_PT]
+    timezone: Africa/Luanda
+    currency: AOA
+    region: central_africa
+
+  Cameroon:
+    iso2: CM
+    locales: [fr_FR, en_GB]
+    timezone: Africa/Douala
+    currency: XAF
+    region: central_africa
+
+  Central African Republic:
+    iso2: CF
+    locales: [fr_FR]
+    timezone: Africa/Bangui
+    currency: XAF
+    region: central_africa
+
+  Chad:
+    iso2: TD
+    locales: [fr_FR]
+    timezone: Africa/Ndjamena
+    currency: XAF
+    region: central_africa
+
+  Congo:
+    iso2: CG
+    locales: [fr_FR]
+    timezone: Africa/Brazzaville
+    currency: XAF
+    region: central_africa
+
+  Democratic Republic of the Congo:
+    iso2: CD
+    locales: [fr_FR]
+    timezone: Africa/Kinshasa
+    currency: CDF
+    region: central_africa
+    short_name: DR Congo
+
+  Sao Tome and Principe:
+    iso2: ST
+    locales: [pt_PT]
+    timezone: Africa/Sao_Tome
+    currency: STN
+    region: central_africa
+
+  # ----- EAST AFRICA -----
+  Burundi:
+    iso2: BI
+    locales: [fr_FR]
+    timezone: Africa/Bujumbura
+    currency: BIF
+    region: east_africa
+
+  Djibouti:
+    iso2: DJ
+    locales: [fr_FR, ar_EG]
+    timezone: Africa/Djibouti
+    currency: DJF
+    region: east_africa
+
+  Ethiopia:
+    iso2: ET
+    locales: [en_GB]
+    timezone: Africa/Addis_Ababa
+    currency: ETB
+    region: east_africa
+
+  Kenya:
+    iso2: KE
+    locales: [en_GB]
+    timezone: Africa/Nairobi
+    currency: KES
+    region: east_africa
+
+  Malawi:
+    iso2: MW
+    locales: [en_GB]
+    timezone: Africa/Blantyre
+    currency: MWK
+    region: east_africa
+
+  Mozambique:
+    iso2: MZ
+    locales: [pt_PT]
+    timezone: Africa/Maputo
+    currency: MZN
+    region: east_africa
+
+  Rwanda:
+    iso2: RW
+    locales: [fr_FR, en_GB]
+    timezone: Africa/Kigali
+    currency: RWF
+    region: east_africa
+
+  Somalia:
+    iso2: SO
+    locales: [ar_SA, en_GB]
+    timezone: Africa/Mogadishu
+    currency: SOS
+    region: east_africa
+
+  South Sudan:
+    iso2: SS
+    locales: [en_GB]
+    timezone: Africa/Juba
+    currency: SSP
+    region: east_africa
+
+  Sudan:
+    iso2: SD
+    locales: [ar_SA, en_GB]
+    timezone: Africa/Khartoum
+    currency: SDG
+    region: east_africa
+
+  Uganda:
+    iso2: UG
+    locales: [en_GB]
+    timezone: Africa/Kampala
+    currency: UGX
+    region: east_africa
+
+  United Republic of Tanzania:
+    iso2: TZ
+    locales: [en_GB]
+    timezone: Africa/Dar_es_Salaam
+    currency: TZS
+    region: east_africa
+    short_name: Tanzania
+
+  # ----- SOUTHERN AFRICA -----
+  Eswatini:
+    iso2: SZ
+    locales: [en_GB, zu_ZA]
+    timezone: Africa/Mbabane
+    currency: SZL
+    region: southern_africa
+
+  Lesotho:
+    iso2: LS
+    locales: [en_GB]
+    timezone: Africa/Maseru
+    currency: LSL
+    region: southern_africa
+
+  Madagascar:
+    iso2: MG
+    locales: [fr_FR]
+    timezone: Indian/Antananarivo
+    currency: MGA
+    region: southern_africa
+
+  Namibia:
+    iso2: NA
+    locales: [en_GB, de_DE]
+    timezone: Africa/Windhoek
+    currency: NAD
+    region: southern_africa
+
+  Zambia:
+    iso2: ZM
+    locales: [en_GB]
+    timezone: Africa/Lusaka
+    currency: ZMW
+    region: southern_africa
+
+  Zimbabwe:
+    iso2: ZW
+    locales: [en_GB]
+    timezone: Africa/Harare
+    currency: ZWL
+    region: southern_africa
+
+  # ----- LATIN AMERICA -----
+  "Bolivia (Plurinational State of)":
+    iso2: BO
+    locales: [es_CO, es_ES]
+    timezone: America/La_Paz
+    currency: BOB
+    region: latin_america_andes
+    short_name: Bolivia
+
+  Caricom:
+    iso2: null
+    locales: [en_GB, es_MX, fr_FR]
+    timezone: America/Port_of_Spain
+    currency: Multi
+    region: caribbean
+    short_name: CARICOM
+    preset_geopoints:
+      - [13.1939, -59.5432]
+      - [18.1096, -77.2975]
+      - [10.6918, -61.2225]
+      - [12.5211, -69.9683]
+      - [15.3092, -61.3790]
+      - [17.3026, -62.7177]
+      - [17.2514, -88.7590]
+      - [18.2206, -63.0686]
+
+  Colombia:
+    iso2: CO
+    locales: [es_CO]
+    timezone: America/Bogota
+    currency: COP
+    region: latin_america_andes
+
+  Cuba:
+    iso2: CU
+    locales: [es_ES]
+    timezone: America/Havana
+    currency: CUP
+    region: caribbean
+
+  Dominican Republic:
+    iso2: DO
+    locales: [es_MX]
+    timezone: America/Santo_Domingo
+    currency: DOP
+    region: caribbean
+
+  Ecuador:
+    iso2: EC
+    locales: [es_CO]
+    timezone: America/Guayaquil
+    currency: USD
+    region: latin_america_andes
+
+  El Salvador:
+    iso2: SV
+    locales: [es_MX]
+    timezone: America/El_Salvador
+    currency: USD
+    region: latin_america_central
+
+  Guatemala:
+    iso2: GT
+    locales: [es_MX]
+    timezone: America/Guatemala
+    currency: GTQ
+    region: latin_america_central
+
+  Haiti:
+    iso2: HT
+    locales: [fr_FR, en_GB]
+    timezone: America/Port-au-Prince
+    currency: HTG
+    region: caribbean
+
+  Honduras:
+    iso2: HN
+    locales: [es_MX]
+    timezone: America/Tegucigalpa
+    currency: HNL
+    region: latin_america_central
+
+  Nicaragua:
+    iso2: NI
+    locales: [es_MX]
+    timezone: America/Managua
+    currency: NIO
+    region: latin_america_central
+
+  Peru:
+    iso2: PE
+    locales: [es_CO]
+    timezone: America/Lima
+    currency: PEN
+    region: latin_america_andes
+
+  Venezuela:
+    iso2: VE
+    locales: [es_CO, es_ES]
+    timezone: America/Caracas
+    currency: VES
+    region: latin_america_andes

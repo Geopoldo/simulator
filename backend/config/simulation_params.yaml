@@ -1,0 +1,139 @@
+# Simulation Parameters Configuration
+# These values control the behavior of the disaster simulation engine
+
+# Progression curve for household recovery over 4 years
+progression:
+  curve_type: "s_curve"
+  description: "Recovery progression from crisis (Year 0) to sustainability (Year 3+)"
+  year_0: 0.0    # Baseline: Worst state (crisis)
+  year_1: 0.6    # Rapid improvement due to humanitarian assistance
+  year_2: 0.9    # Consolidation phase
+  year_3_plus: 1.0  # Sustainability achieved
+
+# Disaster impact magnitude multipliers
+disaster_impact:
+  magnitude_multipliers:
+    # Earthquake severity (Richter scale)
+    richter:
+      - threshold: 7.0
+        multiplier: 2.0
+        description: "Catastrophic earthquake"
+      - threshold: 6.0
+        multiplier: 1.5
+        description: "Major earthquake"
+      - threshold: 5.0
+        multiplier: 1.2
+        description: "Moderate earthquake"
+    
+    # Hurricane/Cyclone wind speed (km/h)
+    wind_speed:
+      - threshold: 200
+        multiplier: 2.0
+        category: 5
+        description: "Category 5 hurricane"
+      - threshold: 150
+        multiplier: 1.6
+        category: 4
+        description: "Category 4 hurricane"
+      - threshold: 120
+        multiplier: 1.3
+        category: 3
+        description: "Category 3 hurricane"
+    
+    # Geographic area affected (km²)
+    area_affected:
+      - threshold: 50000
+        multiplier: 1.8
+        description: "Massive regional impact (>50,000 km²)"
+      - threshold: 10000
+        multiplier: 1.4
+        description: "Large regional impact"
+      - threshold: 1000
+        multiplier: 1.2
+        description: "Localized impact"
+    
+    # Extreme precipitation (mm)
+    precipitation:
+      - threshold: 500
+        multiplier: 1.5
+        description: "Extreme rainfall event"
+      - threshold: 200
+        multiplier: 1.3
+        description: "Heavy rainfall"
+      - threshold: 100
+        multiplier: 1.1
+        description: "Significant rainfall"
+
+# Economic shock thresholds affecting livelihood strategies
+economic_shock:
+  thresholds:
+    moderate: 0.3  # Threshold for moderate coping strategies
+    severe: 0.6    # Threshold for severe/crisis coping strategies
+  description: "Logarithmic scale based on total economic damage"
+
+# Humanitarian assistance probability calculation
+assistance_probability:
+  base: 0.15           # Baseline probability (some assistance always available)
+  modifiers:
+    ofda_response: 0.35  # OFDA/BHA international response present
+    appeal: 0.20         # UN/Red Cross appeal issued
+    declaration: 0.15    # Government emergency declaration
+  max: 0.85            # Maximum probability cap
+  description: "Probability of household receiving humanitarian aid"
+
+# Food Consumption Score (FCS) field-specific boosts
+fcs_boosts:
+  staples: 3.0         # Staple foods bonus (cereals, tubers)
+  sugar: 0.5           # Sugar/sweets bonus
+  improvement_max: 25.0  # Maximum FCS improvement over 4-year period
+
+# Physical destruction probabilities (house damage/loss)
+physical_destruction:
+  richter:
+    catastrophic: 7.0  # ≥7.0 Richter → 40% total destruction probability
+    major: 6.0         # ≥6.0 Richter → 15% total destruction probability
+  wind_speed:
+    category_5: 200    # ≥200 km/h → 50% total destruction
+    category_4: 150    # ≥150 km/h → 20% total destruction
+  probabilities:
+    richter_7_plus: 0.40
+    richter_6_plus: 0.15
+    wind_200_plus: 0.50
+    wind_150_plus: 0.20
+
+# Health impact thresholds (based on injury counts)
+health_impact:
+  injured_thresholds:
+    - count: 1000
+      probability: 0.50  # 50% probability of health issues
+    - count: 100
+      probability: 0.25  # 25% probability
+    - count: 10
+      probability: 0.10  # 10% probability
+  baseline: 0.05         # 5% baseline probability
+
+# Displacement probability (based on homelessness data)
+displacement:
+  homeless_thresholds:
+    - count: 5000
+      probability: 0.60  # 60% displacement probability
+    - count: 1000
+      probability: 0.35  # 35% probability
+    - count: 100
+      probability: 0.15  # 15% probability
+  baseline: 0.05         # 5% baseline (minimal displacement)
+
+# Geographic coordinate variation (degrees)
+geopoint_variation:
+  disaster_based: 0.5    # ±50km around disaster epicenter
+  profile_based: 0.1     # ±10km around profile geopoint
+  faker_fallback: 0.5    # ±50km around country center
+
+# Temporal decay parameters
+temporal_decay:
+  recency_months: 12     # Disasters decay over 12 months
+  duration_multipliers:
+    multi_year: 1.5      # >365 days (prolonged disasters like droughts)
+    long: 1.3            # 180-365 days
+    medium: 1.1          # 90-180 days
+    short: 1.0           # <90 days
